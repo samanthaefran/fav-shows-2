@@ -2,6 +2,8 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
+const showsRouter = require ('./controllers/shows')
 
 // initialize app
 const app = express();
@@ -19,6 +21,11 @@ db.on('connected', () => console.log('mongo works!'))
 db.on('disconnected', () => console.log('mongo not working'))
 
 // mount middleware
+app.use(express.urlencoded({ extended: false}));
+app.use(methodOverride("_method"))
+
+// mount routes
+app.use('/', showsRouter);
 
 // listener
 const PORT = process.env.PORT
