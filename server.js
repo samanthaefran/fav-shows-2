@@ -21,6 +21,7 @@ db.on('connected', () => console.log('mongo works!'))
 db.on('disconnected', () => console.log('mongo not working'))
 
 // mount middleware
+app.use(express.static('public'))
 app.use(express.urlencoded({ extended: false}));
 app.use(methodOverride("_method"))
 

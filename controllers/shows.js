@@ -36,6 +36,11 @@ showsRouter.get ('/destroy-data', async (req, res) => {
   res.redirect('/shows');
 })
 
+// root route
+showsRouter.get('/home', (req, res) => {
+  res.render('home.ejs')
+})
+
 //  index route
 showsRouter.get('/shows', (req, res) => {
   Show.find({}, (error, shows) => {
@@ -68,5 +73,20 @@ showsRouter.post('/shows', (req,res) => {
     res.send(show)
   })
 })
+
+// edit route
+showsRouter.get('/shows/:id/edit', (req, res) => {
+  Show.findById(req.params.id, (error, show) => {
+    res.render("edit.ejs", { show }
+    )
+  });
+});
+
+// show route
+showsRouter.get('/shows/:id', (req, res) => {
+  Show.findById(req.params.id, (err, show) => {
+    res.render("show.ejs", { show })
+  });
+});
 
 module.exports = showsRouter;

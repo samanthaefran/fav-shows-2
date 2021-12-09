@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('') %>
+<body>
+  <h1>My Favorite Shows </h1>
+  <ul style="list-style:none">
+    <% shows.forEach(show => { %>
+      <li style="margin-bottom: 1rem;">
+        </form>
+        <a href="/shows/<%= show._id %>">
+          <%=show.title %>
+        </a>
+        <br />
+        <a style="margin: 0 1rem 0 0;" href="/shows/<%=show._id %>/edit">Edit</a>
+      </li>
+      <% }) %>
+  </ul>
+  <nav>
+    <a href="/shows/new">Add a New Show</a>
+  </nav>
+</body>
+</html>
