@@ -3,13 +3,13 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+
 const showsRouter = require ('./controllers/shows')
 
 // initialize app
 const app = express();
 
 // config - 'connect' .env file to server.js
-
 require('dotenv').config()
 
 // database connection

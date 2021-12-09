@@ -61,8 +61,9 @@ showsRouter.delete('/shows/:id', (req, res) => {
 });
 
 // update route
-showsRouter.put('/shows', (req, res) => {
+showsRouter.put('/shows/:id', (req, res) => {
   Show.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedShow) => {
+    console.log(req.params.id);
     res.redirect(`/shows/${req.params.id}`);
   });
 });
@@ -70,7 +71,7 @@ showsRouter.put('/shows', (req, res) => {
 // create route
 showsRouter.post('/shows', (req,res) => {
   Show.create(req.body, (err, show) => {
-    res.send(show)
+    res.redirect('/shows');
   })
 })
 
