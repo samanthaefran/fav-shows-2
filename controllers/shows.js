@@ -37,7 +37,7 @@ showsRouter.get ('/destroy-data', async (req, res) => {
 })
 
 // root route
-showsRouter.get('/home', (req, res) => {
+showsRouter.get('/', (req, res) => {
   res.render('home.ejs')
 })
 
