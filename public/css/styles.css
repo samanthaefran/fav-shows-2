@@ -1,14 +1,14 @@
 body {
-  background-color: #fff0d9;
+  background-color: #fffde7;
   font-family: 'Readex Pro', sans-serif;
-  color: #33240d;
+  color:#ec0b19;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
 button {
-  background-color: #ffaa69;
+  background-color: #189BA3;
   border-radius: 2px;
 }
 
