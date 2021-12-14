@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head.ejs') %>
-<body>
-  <h1>Edit Show Details</h1>
-  <form action='/shows/<%=show._id %>?_method=PUT' method='POST'>
-    Title: <input type="text" name="title">
-    Year Released: <input type="text" name="year released" >
-    Starring: <input type="text" name="starring">
+<%- include('./partials/head.ejs') %>
 
-    <input type='submit' value='submit changes'/>
-  </form>
-  
-</body>
+  <body>
+    <nav>
+      <h1>Edit Show Details</h1>
+      <a href="/shows"> my shows</a>
+      <a href="/">home</a>
+    </nav>
+
+
+    <form class="info-changes" action='/shows/<%=show._id %>?_method=PUT' method='POST'>
+      Title: <input type="text" name="title"> <br />
+      Year Released: <input type="text" name="year released"> <br />
+      Starring: <input type="text" name="starring"> <br />
+
+      <input type='submit' value='submit changes' />
+    </form>
+
+
+  </body>
+
 </html>

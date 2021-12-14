@@ -3,15 +3,18 @@
 <%- include('./partials/head.ejs') %>
 
 	<body>
+		<nav>
 		<h1>Add a New Show</h1>
-		<button><a href='/'>back to homepage</a></button>
-		<form action="/shows" method="POST">
+		<a href='/'>home</a>
+		<a href='/shows'>my shows</a>
+		</nav>
+		
+		<form class='info-changes' action="/shows" method="POST">
 			Title: <input type="text" name="title" /><br />
 			Year Released: <input type="text" name="yearReleased" /><br />
 			Starring: <input type="text" name="starring" /><br />
 			<input type="submit" name="" value="Add Show" />
 		</form>
-	</body>
 	</body>
 
 </html>

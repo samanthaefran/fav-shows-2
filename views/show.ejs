@@ -3,7 +3,11 @@
 <%- include('./partials/head.ejs') %>
 
   <body>
-    <button><a href='/'>back to homepage</a></button>
+    <nav>
+      <h1>tely</h1>
+      <a href='/'>back to homepage</a>
+      <a href='/shows/add'>add a new show</a>
+    </nav>
     <ul>
       <h1>
         <%= show.title %>
@@ -12,7 +16,8 @@
       </li>
       <li>Starring: <%= show.starring %>
       </li>
-    </ul>
+    </ul> 
+    <a href="/shows/<%=show._id %>/edit">edit this show</a>
   </body>
 
 </html>

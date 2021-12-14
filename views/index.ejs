@@ -3,17 +3,22 @@
 <%- include('./partials/head.ejs') %>
 
   <body>
-    <h1>My Favorite Shows </h1>
-    <button><a href='/'>back to homepage</a></button>
-    <ul style="list-style:none">
+    <nav>
+      <h1>tely</h1>
+      <a href='/'>back to homepage</a>
+    </nav>
+
+    <div class="title">
+      <h2>my shows</h2>
+      
+    </div>
+
+    <ul class="show-list" style="list-style:none">
       <% shows.forEach(show=> { %>
         <li style="margin-bottom: 1rem;">
-          </form>
           <a href="/shows/<%= show._id %>">
             <%=show.title %>
           </a>
-          <br />
-          <button><a href="/shows/<%=show._id %>/edit">Edit</a></button>
           <form action="/shows/<%= show.id %>?_method=DELETE" method="POST">
             <input type="submit" value="Delete" />
           </form>
