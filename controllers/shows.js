@@ -1,4 +1,5 @@
 // require dependencies
+const { default: axios } = require('axios');
 const express = require('express');
 
 // create a router object
@@ -13,17 +14,17 @@ showsRouter.get('/shows/seed', async (req, res) => {
     {
       title: 'Schitts Creek',
       yearReleased: '2015',
-      starring: 'Dan Levy', 
+      starring: 'Dan Levy',
     },
     {
       title: 'Seinfeld',
       yearReleased: '1989',
-      starring: 'Jerry Seinfeld', 
+      starring: 'Jerry Seinfeld',
     },
     {
       title: 'New Girl',
       yearReleased: '2011',
-      starring: 'Zoey Deschanel', 
+      starring: 'Zoey Deschanel',
     },
   ];
   await Show.deleteMany({});
@@ -31,7 +32,7 @@ showsRouter.get('/shows/seed', async (req, res) => {
   res.redirect('/shows');
 });
 
-showsRouter.get ('/destroy-data', async (req, res) => {
+showsRouter.get('/destroy-data', async (req, res) => {
   await Show.deleteMany({});
   res.redirect('/shows');
 })
@@ -49,7 +50,7 @@ showsRouter.get('/shows', (req, res) => {
 });
 
 // new route 
-showsRouter.get('/shows/new', (req,res) => {
+showsRouter.get('/shows/new', (req, res) => {
   res.render('new.ejs');
 });
 
@@ -62,14 +63,14 @@ showsRouter.delete('/shows/:id', (req, res) => {
 
 // update route
 showsRouter.put('/shows/:id', (req, res) => {
-  Show.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedShow) => {
+  Show.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedShow) => {
     console.log(req.params.id);
     res.redirect(`/shows/${req.params.id}`);
   });
 });
 
 // create route
-showsRouter.post('/shows', (req,res) => {
+showsRouter.post('/shows', (req, res) => {
   Show.create(req.body, (err, show) => {
     res.redirect('/shows');
   })
@@ -86,7 +87,11 @@ showsRouter.get('/shows/:id/edit', (req, res) => {
 // show route
 showsRouter.get('/shows/:id', (req, res) => {
   Show.findById(req.params.id, (err, show) => {
-    res.render("show.ejs", { show })
+    axios.get(`https://www.omdbapi.com/?apikey=3feafbbd&t=${show.title}`).
+      then(data => {
+        let showImg = data.data.Poster
+        res.render("show.ejs", { show, showImg })
+      })
   });
 });
 
