@@ -7,11 +7,15 @@ Decide that you don't like a show any more? No problem, you can delete it.
 
 ## Screenshots ## 
 
-![img placeholder]
+![ Homepage ] (https://i.imgur.com/pLzSVDk.png)
 
-![img placeholder]
+![ Show List ] (https://i.imgur.com/xf6iKya.png)
 
-![img placeholder]
+![ Indidivual Show ] (https://i.imgur.com/1rWOmjz.png)
+
+![ Wireframe ] (https://i.imgur.com/dQP40b6.png)
+
+![ ERD ] (https://i.imgur.com/yQeyZSh.png)
 
 ## Technologies Used ##
 - JavaScript
