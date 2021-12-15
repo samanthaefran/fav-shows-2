@@ -4,15 +4,14 @@
 
 	<body>
 		<nav>
-		<h1>Add a New Show</h1>
+		<h1>Add a New Title</h1>
 		<a href='/'>home</a>
-		<a href='/shows'>my shows</a>
+		<a href='/shows'>my list</a>
 		</nav>
 		
 		<form class='info-changes' action="/shows" method="POST">
 			Title: <input type="text" name="title" /><br />
-			Year Released: <input type="text" name="yearReleased" /><br />
-			Starring: <input type="text" name="starring" /><br />
+			Rating: <input type="text" name="rating" placeholder="rating between 1-5">
 			<input type="submit" name="" value="Add Show" />
 		</form>
 	</body>

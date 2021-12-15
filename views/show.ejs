@@ -6,16 +6,17 @@
     <nav>
       <h1>tely</h1>
       <a href='/'>back to homepage</a>
-      <a href='/shows/add'>add a new show</a>
     </nav>
     <img src='<%=showImg%>'>
     <ul>
       <h1>
         <%= show.title %>
       </h1>
-      <li>Year Released: <%= show.yearReleased %>
+      <li>Year Released: <%= showYear %>
       </li>
-      <li>Starring: <%= show.starring %>
+      <li>Actors: <%= showActors %>
+      </li>
+      <li>Rating: <%= show.rating%>
       </li>
     </ul> 
     <a href="/shows/<%=show._id %>/edit">edit this show</a> 

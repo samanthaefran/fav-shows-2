@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 // define the schema
 const showSchema = new Schema({
   title: { type: String, required: true },
+  rating: {type: String, required: false},
 })
 
 

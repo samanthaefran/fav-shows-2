@@ -90,7 +90,10 @@ showsRouter.get('/shows/:id', (req, res) => {
     axios.get(`https://www.omdbapi.com/?apikey=3feafbbd&t=${show.title}`).
       then(data => {
         let showImg = data.data.Poster
-        res.render("show.ejs", { show, showImg })
+        let showYear = data.data.Year
+        let showActors = data.data.Actors
+        console.log(showYear)
+        res.render("show.ejs", { show, showImg, showYear, showActors })
       })
   });
 });
