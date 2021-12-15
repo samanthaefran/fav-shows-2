@@ -28,7 +28,7 @@ Decide that you don't like a show any more? No problem, you can delete it.
 - OMBd API for tvshow posters
 
 ## Getting Started ## 
-To get started, go to this URL and start adding your favorite shows!
+To get started, [click here!](https://tely-app.herokuapp.com/) and start adding your favorite shows!
 
 ## Future Enhancements ##
 
